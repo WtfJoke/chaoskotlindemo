@@ -13,4 +13,7 @@ class MovieController(val movieService: MovieService) {
 
     @GetMapping("/movies")
     fun getRecommendation(): Movie = movieService.getMovie()
+
+    @GetMapping("/movies/top1")
+    fun getBestMovie(): Movie = movieService.getMovieByTitle("Inception")
 }

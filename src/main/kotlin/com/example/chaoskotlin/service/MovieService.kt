@@ -14,6 +14,8 @@ class MovieService(val movieRepository: MovieRepository) {
 
     fun getMovie(): Movie = Try.of(this::getRecommendedMovie).getOrElse(fallbackMovie)
 
+    fun getMovieByTitle(title: String): Movie = movieRepository.findByTitle(title)
+
     fun getRecommendedMovie(): Movie {
         val movies = getMovies()
         return movies[Random().nextInt(movies.size)]
