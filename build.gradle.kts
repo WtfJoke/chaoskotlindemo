@@ -26,7 +26,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.github.resilience4j:resilience4j-core:1.6.1")
-    implementation("de.codecentric:chaos-monkey-spring-boot:2.4.6-SNAPSHOT")
+    implementation("de.codecentric:chaos-monkey-spring-boot:2.5.1-SNAPSHOT")
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

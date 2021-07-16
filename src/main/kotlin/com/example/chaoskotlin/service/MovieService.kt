@@ -17,6 +17,7 @@ class MovieService(val movieRepository: MovieRepository) {
     fun getMovieByTitle(title: String): Movie = movieRepository.findByTitle(title)
 
     fun getRecommendedMovie(): Movie {
+//        demoRepo.foo()
         val movies = getMovies()
         return movies[Random().nextInt(movies.size)]
     }
