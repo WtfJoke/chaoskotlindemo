@@ -2,10 +2,15 @@ package com.example.chaoskotlin
 
 import com.example.chaoskotlin.domain.Movie
 import com.example.chaoskotlin.repository.MovieRepository
+import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.ApplicationArguments
+import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
+
 
 @SpringBootApplication
 class ChaoskotlinApplication{
@@ -21,6 +26,19 @@ class ChaoskotlinApplication{
             repository.save(Movie("Spider-Man: A New Universe", "1h 56m"))
             repository.save(Movie("Swiss Army Man", "1h 37m"))
             repository.save(Movie("John Wick 3", "2h 10m"))
+        }
+    }
+
+    private val logger = LoggerFactory.getLogger(ChaoskotlinApplication::class.java)
+
+
+    @Bean
+    fun applicationRunner(@Value("\${password}") password: String): ApplicationRunner? {
+        return ApplicationRunner {
+            logger.info(
+                "`message` loaded from the AWS Parameter store: {}",
+                password
+            )
         }
     }
 }

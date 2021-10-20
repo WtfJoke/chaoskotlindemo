@@ -13,6 +13,7 @@ version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -25,6 +26,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.github.resilience4j:resilience4j-core:1.7.1")
     implementation("de.codecentric:chaos-monkey-spring-boot:2.5.4")
+    implementation("io.awspring.cloud:spring-cloud-starter-aws-parameter-store-config:2.3.2")
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
