@@ -1,0 +1,17 @@
+### Request a Movie
+GET http://localhost:8080/movies
+
+### GET Chaos Monkey Configuration
+GET http://localhost:8080/actuator/chaosmonkey
+
+### GET Chaos Monkey Assault Configuration
+GET http://localhost:8080/actuator/chaosmonkey/assaults
+
+### Enable Latency Assault
+POST http://localhost:8080/actuator/chaosmonkey/assaults
+Content-Type: application/json
+
+{
+  "latencyActive": true
+}
+
